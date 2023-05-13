@@ -4,6 +4,7 @@ import { Autoplay, Navigation } from "swiper";
 import "swiper/css/navigation";
 import "swiper/css";
 import { BiRadioCircleMarked } from "react-icons/bi";
+import { BsArrowDown } from "react-icons/bs";
 import CountUp from "react-countup";
 
 const Banner = () => {
@@ -16,7 +17,7 @@ const Banner = () => {
           slidesPerView={1}
           modules={[Navigation, Autoplay]}
           autoplay={{
-            delay: 3500,
+            delay: 4500,
             disableOnInteraction: false,
           }}
           navigation={true}
@@ -34,7 +35,7 @@ const Banner = () => {
                   The coffee is brewed by pure organic green coffee beans over
                   hot coals in a brazier. given an opportunity to sample.
                 </p>
-                <button className="btn bg-gradient-to-r from-green-600 mt-7 border-none">
+                <button className="btn bg-[#6F4E37] mt-7 border-none">
                   Explore More
                 </button>
               </div>
@@ -57,7 +58,7 @@ const Banner = () => {
                   The coffee is brewed by first roasting the green coffee beans
                   over hot coals in a brazier. given an opportunity to sample.
                 </p>
-                <button className="btn bg-gradient-to-r from-green-600 mt-7 border-none">
+                <button className="btn bg-[#6F4E37] mt-7 border-none">
                   Explore More
                 </button>
               </div>
@@ -69,31 +70,36 @@ const Banner = () => {
             </div>
           </SwiperSlide>
           {/* <ScrollTrigger> */}
-          <div className="flex items-center justify-around border-t-2 border-green-600 my-16">
-            <p className="mt-10">
+          <div className="grid lg:grid-cols-3 grid-cols-2 border-t-2 border-[#6F4E37] my-16">
+            <p className="mt-10 mx-auto">
               <span className="lg:text-4xl text-2xl font-extrabold flex items-center">
                 <BiRadioCircleMarked className="text-[#6F4E37]" />
-                <CountUp start={0} end={1000} delay={1} duration={6}/>+<br />
+                <CountUp start={0} end={1000} delay={1} duration={5} />+<br />
               </span>
               Customer using this App & its free
             </p>
-            <p className="mt-10">
+            <p className="mt-10 mx-auto">
               <span className="lg:text-4xl text-2xl font-extrabold flex items-center">
-                <BiRadioCircleMarked className="text-[#6F4E37]" /><CountUp start={0} end={50} delay={1} duration={6}/>+ <br />
+                <BiRadioCircleMarked className="text-[#6F4E37]" />
+                <CountUp start={0} end={50} delay={1} duration={6} />+ <br />
               </span>
               Unique Coffee's Available
             </p>
-            <p className="mt-10">
+            <p className="mt-10 mx-auto">
               <span className="lg:text-4xl text-2xl font-extrabold flex items-center">
-                <BiRadioCircleMarked className="text-[#6F4E37]" /><CountUp start={0} end={95} delay={1} duration={6}/>% <br />
+                <BiRadioCircleMarked className="text-[#6F4E37]" />
+                <CountUp start={0} end={95} delay={1} duration={6} />% <br />
               </span>
               Better and Authentic Taste
             </p>
           </div>
           {/* </ScrollTrigger> */}
         </Swiper>
+        <BsArrowDown className="mx-auto text-3xl animate-bounce" />
+        <p className="text-center pb-4 font-bold">
+          S{""} C{""} R{""} O{""} L{""} L
+        </p>
       </div>
-      {/* cards */}
     </section>
   );
 };

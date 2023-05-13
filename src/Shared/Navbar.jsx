@@ -1,19 +1,35 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../context/AuthProvider/AuthProvider';
 
 const Navbar = () => {
+  const { user, logOut } = useContext(AuthContext);
+  const navigate = useNavigate();
+
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {})
+      .catch((err) => console.log(err));
+      navigate('/')
+  };
     const menuItem = (
-      <>
+      <React.Fragment>
       <li>
-        <Link to={"/"} className="font-semibold">Home</Link>
+        <Link to={"/"} className="font-bold hover:text-white">Home</Link>
       </li>
       <li>
-        <Link className="font-semibold" >Blog</Link>
+        <Link to={"/menu"} className="font-bold hover:text-white" >Menu</Link>
      </li>
-      <li>
-        <Link className="font-semibold">Docs</Link>
-      </li>
-      </>
+     {user?.uid ? (
+          <li>
+            <Link className='font-bold hover:text-white' onClick={handleLogOut}>Logout</Link>
+          </li>
+      ) : (
+        <li>
+          <Link className='font-bold hover:text-white' to="/login">Login</Link>
+        </li>
+      )}
+      </React.Fragment>
     )
     return (
       <>
