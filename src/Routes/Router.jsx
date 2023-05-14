@@ -4,6 +4,7 @@ import Home from "../Components/Home/Home";
 import Login from "../Login/Login";
 import SignUp from "../SignUp/SignUp";
 import Menu from "../Menu/Menu";
+import PrivateRouter from "./PrivateRouter/PrivateRouter";
 
 const router = createBrowserRouter([
     {
@@ -24,7 +25,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "/menu",
-                element: <Menu/>
+                element: <PrivateRouter><Menu/></PrivateRouter>
             }
         ]
     }
